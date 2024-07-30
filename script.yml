@@ -1,0 +1,39 @@
+---
+- name: Web Servers Execute Script
+  hosts: webservers
+  remote_user: root
+
+  tasks:
+  - name: execute script.sh
+    script: /root/script.sh
+    register: sh_result
+
+  - name : print sh result
+    debug:
+      msg: "{{ sh_result.stdout_lines }}"
+
+- name: WAS Servers Execute Script
+  hosts: wasservers
+  remote_user: root
+
+  tasks:
+  - name: execute script.sh
+    script: /root/script.sh
+    register: sh_result
+
+  - name : print sh result
+    debug:
+      msg: "{{ sh_result.stdout_lines }}"
+
+- name: DB Servers Execute Script
+  hosts: dbservers
+  remote_user: root
+
+  tasks:
+  - name: execute script.sh
+    script: /root/script.sh
+    register: sh_result
+
+  - name : print sh result
+    debug:
+      msg: "{{ sh_result.stdout_lines }}"
