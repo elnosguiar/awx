@@ -1,0 +1,20 @@
+- name: Execute scripts on WEB WAS DB servers
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Run Web Server Script
+      hosts: webServers
+      gather_facts: false
+
+      tasks:
+        - name: Execute script
+          shell: uptime
+
+    - name: Run WAS Server Script
+      hosts: wasServers
+      gather_facts: false
+
+      tasks:
+        - name: Execute script
+          shell: uptime
