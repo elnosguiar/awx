@@ -1,20 +1,24 @@
-- name: Execute scripts on WEB WAS DB servers
-  hosts: all
-  become: true
+---
+- name: Web Servers Uptimes
+  hosts: webservers
+  remote_user: root
 
   tasks:
-    - name: Run Web Server Script
-      hosts: webServers
-      gather_facts: false
+  - name: execute uptime
+    shell: uptime
 
-      tasks:
-        - name: Execute script
-          shell: uptime
+- name: WAS Servers Uptimes
+  hosts: wasservers
+  remote_user: root
 
-    - name: Run WAS Server Script
-      hosts: wasServers
-      gather_facts: false
+  tasks:
+  - name: execute uptime
+    shell: uptime
 
-      tasks:
-        - name: Execute script
-          shell: uptime
+- name: DB Servers Uptimes
+  hosts: dbservers
+  remote_user: root
+
+  tasks:
+  - name: execute uptime
+    shell: uptime
