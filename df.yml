@@ -1,0 +1,39 @@
+---
+- name: Web Servers Disk Free Check
+  hosts: webservers
+  remote_user: root
+
+  tasks:
+  - name: execute df -h
+    shell: df -h
+    register: df_result
+
+  - name : print df result
+    debug:
+      msg: "{{ df_result.stdout_lines }}"
+
+- name: WAS Servers Disk Free Check
+  hosts: wasservers
+  remote_user: root
+
+  tasks:
+  - name: execute df -h
+    shell: df -h
+    register: df_result
+
+  - name : print df result
+    debug:
+      msg: "{{ df_result.stdout_lines }}"
+
+- name: DB Servers Disk Free Check
+  hosts: dbservers
+  remote_user: root
+
+  tasks:
+  - name: execute df -h
+    shell: df -h
+    register: df_result
+
+  - name : print df result
+    debug:
+      msg: "{{ df_result.stdout_lines }}"
