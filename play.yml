@@ -5,12 +5,12 @@
 
   tasks:
   - name: execute uptime
-    shell: echo $HOSTNAME && uptime
-    register: hostuptime
+    shell: uptime
+    register: uptime
 
-  - name : print hostname and uptime
+  - name : print uptime
     debug:
-      msg: "{{ hostuptime.stdout_lines }}"
+      var: uptime.stdout
 
 - name: WAS Servers Uptimes
   hosts: wasservers
@@ -18,12 +18,12 @@
 
   tasks:
   - name: execute uptime
-    shell: echo $HOSTNAME && uptime
-    register: hostuptime
+    shell: uptime
+    register: uptime
 
-  - name : print hostname and uptime
+  - name : print uptime
     debug:
-      msg: "{{ hostuptime.stdout_lines }}"
+      var: uptime.stdout
 
 - name: DB Servers Uptimes
   hosts: dbservers
@@ -31,9 +31,9 @@
 
   tasks:
   - name: execute uptime
-    shell: echo $HOSTNAME && uptime
-    register: hostuptime
+    shell: uptime
+    register: uptime
 
-  - name : print hostname and uptime
+  - name : print uptime
     debug:
-      msg: "{{ hostuptime.stdout_lines }}"
+      var: uptime.stdout
