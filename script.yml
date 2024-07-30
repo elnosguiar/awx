@@ -14,7 +14,7 @@
   - name: chmod script file
     command: chmod -x /root/script.sh
 
-  - name : print sh result
+  - name: print sh result
     debug:
       msg: "{{ sh_result.stdout_lines }}"
 
@@ -33,7 +33,7 @@
   - name: chmod script file
     command: chmod -x /root/script.sh
 
-  - name : print sh result
+  - name: print sh result
     debug:
       msg: "{{ sh_result.stdout_lines }}"
 
@@ -52,6 +52,6 @@
   - name: chmod script file
     command: chmod -x /root/script.sh
 
-  - name : print sh result
+  - name: print sh result
     debug:
       msg: "{{ sh_result.stdout_lines }}"
