@@ -8,7 +8,7 @@
     command: chmod +x /root/script.sh
 
   - name: execute script file
-    shell: sh /root/script.sh
+    shell: /root/script.sh
     register: sh_result
 
   - name: chmod script file
@@ -27,7 +27,7 @@
     command: chmod +x /root/script.sh
 
   - name: execute script file
-    shell: sh /root/script.sh
+    shell: /root/script.sh
     register: sh_result
 
   - name: chmod script file
@@ -46,7 +46,7 @@
     command: chmod +x /root/script.sh
 
   - name: execute script file
-    shell: sh /root/script.sh
+    shell: /root/script.sh
     register: sh_result
 
   - name: chmod script file
