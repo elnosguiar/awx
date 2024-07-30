@@ -5,7 +5,9 @@
 
   tasks:
   - name: execute script.sh
+    command: chmod +x /root/script.sh
     script: /root/script.sh
+    command: chmod -x /root/script.sh
     register: sh_result
 
   - name : print sh result
@@ -18,7 +20,9 @@
 
   tasks:
   - name: execute script.sh
+    command: chmod +x /root/script.sh
     script: /root/script.sh
+    command: chmod -x /root/script.sh
     register: sh_result
 
   - name : print sh result
@@ -31,7 +35,9 @@
 
   tasks:
   - name: execute script.sh
+    command: chmod +x /root/script.sh
     script: /root/script.sh
+    command: chmod -x /root/script.sh
     register: sh_result
 
   - name : print sh result
