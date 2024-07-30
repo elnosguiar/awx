@@ -4,11 +4,15 @@
   remote_user: root
 
   tasks:
-  - name: execute script
+  - name: chmod script file
     command: chmod +x /root/script.sh
+
+  - name: execute script file
     script: /root/script.sh
-    command: chmod -x /root/script.sh
     register: sh_result
+
+  - name: chmod script file
+    command: chmod -x /root/script.sh
 
   - name : print sh result
     debug:
@@ -19,11 +23,15 @@
   remote_user: root
 
   tasks:
-  - name: execute script
+  - name: chmod script file
     command: chmod +x /root/script.sh
+
+  - name: execute script file
     script: /root/script.sh
-    command: chmod -x /root/script.sh
     register: sh_result
+
+  - name: chmod script file
+    command: chmod -x /root/script.sh
 
   - name : print sh result
     debug:
@@ -34,11 +42,15 @@
   remote_user: root
 
   tasks:
-  - name: execute script
+  - name: chmod script file
     command: chmod +x /root/script.sh
+
+  - name: execute script file
     script: /root/script.sh
-    command: chmod -x /root/script.sh
     register: sh_result
+
+  - name: chmod script file
+    command: chmod -x /root/script.sh
 
   - name : print sh result
     debug:
