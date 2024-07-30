@@ -6,6 +6,8 @@
   tasks:
   - name: execute uptime
     shell: uptime
+    register: command_result
+    delegate_to: localhost
 
 - name: WAS Servers Uptimes
   hosts: wasservers
@@ -14,6 +16,8 @@
   tasks:
   - name: execute uptime
     shell: uptime
+    register: command_result
+    delegate_to: localhost
 
 - name: DB Servers Uptimes
   hosts: dbservers
@@ -22,3 +26,14 @@
   tasks:
   - name: execute uptime
     shell: uptime
+    register: command_result
+    delegate_to: localhost
+
+- name: Total Uptimes
+  hosts: localhost
+  remote_user: root
+
+  tasks:
+  - name: Print command output
+    debug:
+      msg: "{{ command_result.stdout_lines }}"
