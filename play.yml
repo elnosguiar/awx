@@ -5,7 +5,7 @@
 
   tasks:
   - name: execute uptime
-    shell: uptime
+    shell: hostname -I && uptime
     register: uptime
 
   - name : print uptime
@@ -18,7 +18,7 @@
 
   tasks:
   - name: execute uptime
-    shell: uptime
+    shell: hostname -I && uptime
     register: uptime
 
   - name : print uptime
@@ -31,7 +31,7 @@
 
   tasks:
   - name: execute uptime
-    shell: uptime
+    shell: hostname -I && uptime
     register: uptime
 
   - name : print uptime
